@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Pull Our AJAX Libraries Straight From Google's CDN -->
-<script src='//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' type='text/javascript'></script>
-<script src='//ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js' type='text/javascript'></script>
+<!--<script src='http://code.jquery.com/jquery-1.5.2.min.js' type='text/javascript'></script>-->
+<script src='./jquery.min.js' type='text/javascript'></script>
+<script src='./papi.js' type='text/javascript'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(){
+
+  $.ajax({ url     : 'http://api.powells.com/v0/testing/locations'
+         , dataType: 'json'
+         , success : function(json){alert('DONE')}
+         , error   : function(){console.error(arguments)}
+         });
+
+});
+var P = new PowellsAPI('testing'); // DEBUG
+
+</script>
+
 </head>
 <body>
+<div id='content'></div>
 </body>
 </html>
